@@ -1,12 +1,12 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: "austin_bikeshare_demo"
+name: "liquor_sales"
 version: "1.0.0"
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: "austin_bikeshare_demo"
+profile: "liquor_sales"
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -26,18 +26,7 @@ clean-targets: # directories to be removed by `dbt clean`
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
 models:
-Materialization
-Staging=views (fast), Marts=tables (query performance).
-  austin_bikeshare_demo:
-    staging:
-      +materialized: view
-      +schema: staging
-    marts:
+  liquor_sales:
+    star:
       +materialized: table
-      +schema: marts
-snapshots:
-  austin_bikeshare_demo:
-    +target_schema: snapshots
-    +strategy: timestamp
-    +unique_key: id
-    +invalidate_hard_deletes: true
+      +schema: star
